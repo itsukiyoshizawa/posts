@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事一覧</title>
+</head>
+<body>
+    <a href="/create">新規作成</a>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Show</th>
+            <th>Edit</th>
+            <th>Del</th>
+        </tr>
+        {{range.}}
+        <tr>
+            <td>{{.Id}}</td>
+            <td>{{.Name}}</td>
+            <td><a href="/show?id={{.Id}}">表示</a></td>
+            <td><a href="/edit?id={{.Id}}">編集</a></td>
+            <td><a href="/delete?id={{.Id}}">削除</a></td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+</html>
